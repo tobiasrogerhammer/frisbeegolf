@@ -25,7 +25,7 @@ const App = () => {
   const [games, setGames] = useState([]); // State to store the list of games
   const [currentGame, setCurrentGame] = useState(null); // State to track the current game
   const [currentHole, setCurrentHole] = useState(0); // State to track the current hole
-  const [currentLocation, setCurrentLocation] = useState("Ekeberg"); // State to track the current location
+  const [currentLocation, setCurrentLocation] = useState("Langhus"); // State to track the current location
 
   const addGame = (location) => {
     const newGame = {
