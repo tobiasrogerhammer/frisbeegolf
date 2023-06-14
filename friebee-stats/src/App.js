@@ -111,7 +111,7 @@ const App = () => {
               className={styles.selectGameBtn}
               onClick={() => selectGame(game.id)}
             >
-              Select Game
+              Start Game
             </button>
           )}
 
