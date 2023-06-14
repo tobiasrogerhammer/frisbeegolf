@@ -106,12 +106,15 @@ const App = () => {
           <h2>
             Game {game.id} At {game.location}
           </h2>
-          <button
-            className={styles.selectGameBtn}
-            onClick={() => selectGame(game.id)}
-          >
-            Select Game
-          </button>
+          {currentGame !== game.id && (
+            <button
+              className={styles.selectGameBtn}
+              onClick={() => selectGame(game.id)}
+            >
+              Select Game
+            </button>
+          )}
+
           <div className={styles.totalPar}>
             Total Par: {game.parData.reduce((acc, score) => acc + score, 0)}
           </div>
