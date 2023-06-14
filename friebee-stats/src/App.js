@@ -119,8 +119,7 @@ const App = () => {
             Total Par: {game.parData.reduce((acc, score) => acc + score, 0)}
           </div>
           <div className={styles.totalScore}>
-            Total Score:{" "}
-            {game.userScores.reduce((acc, score) => acc + score, 0)}
+            Your Score: {game.userScores.reduce((acc, score) => acc + score, 0)}
           </div>
           <Line
             data={{
