@@ -1,0 +1,99 @@
+/* frisbee.module.css */
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #FF5722;
+  margin-bottom: 20px;
+}
+
+.gameContainer {
+  background-color: #F9F9F9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gameContainer h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.totalPar, .totalScore {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #777777;
+}
+
+.holeInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.currentHole, .currentScore {
+  font-size: 18px;
+  color: #333333;
+}
+
+.prevHoleBtn, .nextHoleBtn, .selectGameBtn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #FF5722;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prevHoleBtn:hover, .nextHoleBtn:hover, .selectGameBtn:hover {
+  background-color: #E64A19;
+}
+
+.prevHoleBtn:disabled, .nextHoleBtn:disabled {
+  background-color: #CCCCCC;
+  cursor: not-allowed;
+}
+
+.updateScoreContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.updateScoreTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.scoreInput {
+  width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.addGameBtn {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.addGameBtn:hover {
+  background-color: #388E3C;
+}
