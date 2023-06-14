@@ -100,7 +100,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 className={styles.title}>Ekeberg Frisbee Golf</h1>
+      <h1 className={styles.title}> Frisbee Golf</h1>
       {games.map((game) => (
         <div key={game.id} className={styles.gameContainer}>
           <h2>
