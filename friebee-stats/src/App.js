@@ -169,25 +169,6 @@ const App = () => {
             >
               Previous Hole
             </button>
-            {currentGame && (
-              <div>
-                <h3 className={styles.updateScoreTitle}>
-                  Score for hole: {currentHole + 1}
-                </h3>
-                <input
-                  type="number"
-                  value={games[currentGame - 1].userScores[currentHole]}
-                  onChange={(e) =>
-                    handleScoreChange(
-                      currentGame,
-                      currentHole,
-                      parseInt(e.target.value)
-                    )
-                  }
-                  className={styles.scoreInput}
-                />
-              </div>
-            )}
             <button
               className={styles.nextHoleBtn}
               onClick={handleNextHole}
@@ -196,6 +177,25 @@ const App = () => {
               Next Hole
             </button>
           </div>
+          {currentGame && (
+            <div>
+              <h3 className={styles.updateScoreTitle}>
+                Score for hole: {currentHole + 1}
+              </h3>
+              <input
+                type="number"
+                value={games[currentGame - 1].userScores[currentHole]}
+                onChange={(e) =>
+                  handleScoreChange(
+                    currentGame,
+                    currentHole,
+                    parseInt(e.target.value)
+                  )
+                }
+                className={styles.scoreInput}
+              />
+            </div>
+          )}
         </div>
       ))}
       <div>
