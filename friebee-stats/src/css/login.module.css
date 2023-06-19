@@ -1,83 +1,101 @@
-/* login.module.css */
-.login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .navItem {
-    margin-right: 20px;
-  }
-  
-  .active {
-    font-weight: bold;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    padding: 8px 16px;
-    margin-top: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .link {
-    margin-top: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  p {
-    margin-top: 10px;
-    color: #333;
-    cursor: pointer;
-  }
-a {
-    color: #ffffff;
-}  
+/* signup.module.css */
+
+/* signup.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.navItem a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navItem a.active {
+  background-color: #FF5722;
+}
+
+.navItem a:hover {
+  background-color: #555555;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #FF5722;
+  margin-bottom: 20px;
+}
+
+/* Rest of the styles remain the same */
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: #777777;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 5px 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #388E3C;
+}
+
+p {
+  color: #777777;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+p:hover {
+  color: #333333;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

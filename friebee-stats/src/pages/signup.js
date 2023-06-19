@@ -31,7 +31,7 @@ function Signup({ onSignup }) {
       }
       if (response.status === 200) {
         sessionStorage.setItem("username", username);
-        window.location.href = "/userhome";
+        window.location.href = "/onePlayer";
       }
     } catch (error) {
       console.log(error);
@@ -56,7 +56,7 @@ function Signup({ onSignup }) {
         window.location.href = "/adminpage";
       } else {
         // Redirect to user home page
-        window.location.href = "/userhome";
+        window.location.href = "/onePlayer";
       }
       console.log("Login successful");
     } else {
@@ -117,13 +117,13 @@ function Signup({ onSignup }) {
         <div>
           <div className={styles.navbar}>
             <div className={styles.navItem}>
-              <NavLink to="/home" className={styles.active}>
-                Nav 1
+              <NavLink to="/signup" className={styles.active}>
+                Signup
               </NavLink>
             </div>
             <div className={styles.navItem}>
               <NavLink to="/signup" className={styles.active}>
-                Nav 2
+                Coming soon
               </NavLink>
             </div>
           </div>

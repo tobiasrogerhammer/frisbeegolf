@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "chart.js";
+import axios from "axios";
 import "chartjs-adapter-date-fns";
 import { Line } from "react-chartjs-2";
 import {
@@ -26,14 +27,25 @@ const OnePlayer = () => {
   const [currentGame, setCurrentGame] = useState(null); // State to track the current game
   const [currentHole, setCurrentHole] = useState(0); // State to track the current hole
   const [currentLocation, setCurrentLocation] = useState("Langhus"); // State to track the current location
+  const [isGameSaved, setIsGameSaved] = useState(false);
+
+
 
   const addGame = (location) => {
+    const username = sessionStorage.getItem("username"); // Retrieve the username from sessionStorage
+
     const newGame = {
       id: games.length + 1,
       location: location,
       parData: [], // Update the parData based on the selected location
       userScores: [], // Initialize userScores as an empty array
+      startTime: new Date().toISOString(),
+      endTime: "", // Initialize the endTime property
+      username: username, // Add the username to the new game object
     };
+
+    newGame.endTime = new Date().toISOString(); // Set the endTime to the current date and time
+    setGames([...games, newGame]);
 
     switch (location) {
       case "Langhus":
@@ -98,9 +110,54 @@ const OnePlayer = () => {
     setCurrentHole(0);
   };
 
+  const handleSaveGame = () => {
+    if (currentGame) {
+      const updatedGames = games.map((game) => {
+        if (game.id === currentGame) {
+          return { ...game, endTime: new Date().toISOString() };
+        }
+        return game;
+      });
+      setGames(updatedGames);
+      setIsGameSaved(true);
+  
+      const savedGame = updatedGames.find((game) => game.id === currentGame);
+      const gameData = {
+        username: savedGame.username,
+        startTime: savedGame.startTime,
+        endTime: savedGame.endTime,
+        userScores: savedGame.userScores,
+        id: savedGame.id,
+      };
+  
+      axios
+        .post("http://localhost:5000/game/create", gameData)
+        .then((response) => {
+          console.log("Game saved successfully:", response.data);
+          // Optionally, you can perform additional actions upon successful save
+        })
+        .catch((error) => {
+          console.error("Error saving game:", error);
+          // Optionally, you can handle errors or display an error message
+        });
+    }
+  };
+  
+  
+  
+
+  function logout() {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("isAdmin");
+  }
+
   return (
     <div>
-      <h1 className={styles.title}> Frisbee Golf</h1>
+      <div className={styles.navbar}>
+        <button className={styles.logout} onClick={logout}>Log out</button>
+        <h1 className={styles.title}> Frisbee Golf</h1>
+        <div className={styles.myGames}><a href="./myGames">Mine runder</a></div>
+      </div>
       {games.map((game) => (
         <div key={game.id} className={styles.gameContainer}>
           <h2>
@@ -192,12 +249,18 @@ const OnePlayer = () => {
                     currentGame,
                     currentHole,
                     parseInt(e.target.value)
-                  )
-                }
-                className={styles.scoreInput}
-              />
+                    )
+                  }
+                  className={styles.scoreInput}
+                  />
             </div>
           )}
+          {currentGame && (
+            <button className={styles.saveGameBtn} onClick={handleSaveGame}>
+              Save Game
+            </button>
+          )}
+          {isGameSaved && <div>Game saved successfully!</div>}
         </div>
       ))}
       <div>

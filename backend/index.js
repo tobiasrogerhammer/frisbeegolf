@@ -3,17 +3,17 @@ const MongoClient = require("mongodb").MongoClient;
 const mongoose = require("mongoose");
 const cors = require("cors");
 const users = require("./users");
+const games = require("./games");
 
 const app = express();
 const db =
-  "mongodb+srv://tobias:<password>@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://tobias:jippijippi@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority";
 const port = 5000;
 
 mongoose.set("strictQuery", false);
-mongoose.connect(db, {});
 mongoose
   .connect(
-    "mongodb+srv://tobias:<password>@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://tobias:jippijippi@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -34,6 +34,7 @@ app.use(
 );
 
 app.use("/user", users);
+app.use("/game", games);
 
 app.listen(port, () => {
   console.log(`Backend server listening on port ${port}`);
