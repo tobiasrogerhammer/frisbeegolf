@@ -3,14 +3,16 @@ const Game = require("./gameSchema");
 
 router.post("/create", async (req, res) => {
   try {
-    const { username, startTime, endTime, userScores, id } = req.body;
+    const { username, startTime, endTime, location, userScores, parData, id } = req.body;
     
     // Create a new game document based on the provided data
     const newGame = new Game({
       username,
       startTime,
       endTime,
+      location,
       userScores,
+      parData,
       id,
     });
     

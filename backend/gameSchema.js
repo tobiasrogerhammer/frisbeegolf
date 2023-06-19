@@ -13,7 +13,15 @@ const gameSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  location: {
+    type: String,
+    required: true,
+  },
   userScores: {
+    type: [Number],
+    required: true,
+  },
+  parData: {
     type: [Number],
     required: true,
   },

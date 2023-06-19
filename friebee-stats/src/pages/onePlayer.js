@@ -127,6 +127,8 @@ const OnePlayer = () => {
         startTime: savedGame.startTime,
         endTime: savedGame.endTime,
         userScores: savedGame.userScores,
+        parData: savedGame.parData,
+        location: savedGame.location, // Include the location in the gameData object
         id: savedGame.id,
       };
   
@@ -142,6 +144,8 @@ const OnePlayer = () => {
         });
     }
   };
+  
+  
   
   
   

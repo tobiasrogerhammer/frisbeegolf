@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
-import styles from "../css/myGames.css";
+import styles from "../css/myGames.module.css";
 
 const PreviousGames = () => {
   const [games, setGames] = useState([]);
@@ -37,9 +37,16 @@ const PreviousGames = () => {
             borderColor: "blue",
             borderWidth: 1,
           },
+          {
+            label: "Par Scores",
+            data: game.parData,
+            fill: false,
+            borderColor: "green",
+            borderWidth: 1,
+          },
         ],
       };
-
+  
       const options = {
         scales: {
           y: {
@@ -60,14 +67,22 @@ const PreviousGames = () => {
           },
         },
       };
-
+  
       return (
         <div key={game.id} className={styles.gameContainer}>
           <h3>Game ID: {game.id}</h3>
+          <p>Location: {game.location}</p>
+          <p>Start Time: {formatDate(game.startTime)}</p>
+          <p>End Time: {formatDate(game.endTime)}</p>
           <Line data={data} options={options} />
         </div>
       );
     });
+  };
+  
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
   };
 
   return (
@@ -75,7 +90,7 @@ const PreviousGames = () => {
       <div className={styles.navbar}>
         <button className={styles.logout} onClick={logout}>Log out</button>
         <h1 className={styles.title}>Frisbee Golf</h1>
-        <div className={styles.myGames}><a href="./myGames">Mine runder</a></div>
+        <div className={styles.myGames}><a href="./onePlayer">Ny runde</a></div>
       </div>
       <h1>Previous Games</h1>
       {games.length === 0 ? (
