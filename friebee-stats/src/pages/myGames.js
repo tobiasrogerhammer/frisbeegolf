@@ -23,7 +23,9 @@ const PreviousGames = () => {
   function logout() {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("isAdmin");
+    window.location.href = "./signup";
   }
+  
 
   const renderGraphs = () => {
     return games.map((game) => {

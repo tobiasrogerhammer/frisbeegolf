@@ -153,7 +153,9 @@ const OnePlayer = () => {
   function logout() {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("isAdmin");
+    window.location.href = "./signup";
   }
+  
 
   return (
     <div>
