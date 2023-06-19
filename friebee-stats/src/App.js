@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Signup />} />
+          <Route index element={<OnePlayer />} />
           <Route path="/onePlayer" element={<OnePlayer />} />
           <Route path="/myGames" element={<PreviousGames />} />
           <Route path="/signup" element={<Signup />} />
