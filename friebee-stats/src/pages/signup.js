@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "../css/login.module.css";
-import { NavLink } from "react-router-dom";
 
 function Signup({ onSignup }) {
   const [username, setUsername] = useState("");
@@ -70,18 +69,8 @@ function Signup({ onSignup }) {
       {isRegistering ? (
         <div>
           <div className={styles.navbar}>
-            <div className={styles.navItem}>
-              <NavLink to="/home" className={styles.active}>
-                Nav 1
-              </NavLink>
-            </div>
-            <div className={styles.navItem}>
-              <NavLink to="/login" className={styles.active}>
-                Nav 2
-              </NavLink>
-            </div>
+             <h1>Frisbeegolf stats</h1>
           </div>
-          <h1>Frisbeegolf statistikk</h1>
           <form onSubmit={handleSubmit}>
             <h2>Sign up</h2>
             <label>
@@ -116,18 +105,8 @@ function Signup({ onSignup }) {
       ) : (
         <div>
           <div className={styles.navbar}>
-            <div className={styles.navItem}>
-              <NavLink to="/signup" className={styles.active}>
-                Signup
-              </NavLink>
-            </div>
-            <div className={styles.navItem}>
-              <NavLink to="/signup" className={styles.active}>
-                Coming soon
-              </NavLink>
-            </div>
+              <h1>Frisbeegolf statistikk</h1>
           </div>
-          <h1>Frisbeegolf statistikk</h1>
           <form onSubmit={handleLogin}>
             <h2>Login</h2>
             <label data-testid="usernameLabel">

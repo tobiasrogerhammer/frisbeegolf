@@ -3,29 +3,11 @@
 /* signup.module.css */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #333333;
   padding: 10px;
   margin-bottom: 20px;
-}
-
-.navItem a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.navItem a.active {
-  background-color: #FF5722;
-}
-
-.navItem a:hover {
-  background-color: #555555;
+  text-align: center;
 }
 
 h1 {
