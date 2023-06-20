@@ -29,8 +29,6 @@ const OnePlayer = () => {
   const [currentLocation, setCurrentLocation] = useState("Langhus"); // State to track the current location
   const [isGameSaved, setIsGameSaved] = useState(false);
 
-
-
   const addGame = (location) => {
     const username = sessionStorage.getItem("username"); // Retrieve the username from sessionStorage
 
@@ -71,6 +69,9 @@ const OnePlayer = () => {
     ); // Set the userScores to the corresponding par values
 
     setGames([...games, newGame]);
+
+    setCurrentGame(null);
+    setIsGameSaved(false);
   };
 
   const handleScoreChange = (gameId, index, score) => {
@@ -120,7 +121,7 @@ const OnePlayer = () => {
       });
       setGames(updatedGames);
       setIsGameSaved(true);
-  
+
       const savedGame = updatedGames.find((game) => game.id === currentGame);
       const gameData = {
         username: savedGame.username,
@@ -131,7 +132,7 @@ const OnePlayer = () => {
         location: savedGame.location, // Include the location in the gameData object
         id: savedGame.id,
       };
-  
+
       axios
         .post("http://localhost:5000/game/create", gameData)
         .then((response) => {
@@ -144,31 +145,27 @@ const OnePlayer = () => {
         });
     }
   };
-  
-  
-  
-  
-  
 
   function logout() {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("isAdmin");
     window.location.href = "./signup";
   }
-  
 
   return (
     <div>
       <div className={styles.navbar}>
-        <button className={styles.logout} onClick={logout}>Log out</button>
+        <button className={styles.logout} onClick={logout}>
+          Log out
+        </button>
         <h1 className={styles.title}> Frisbee Golf</h1>
-        <div className={styles.myGames}><a href="./myGames">Mine runder</a></div>
+        <div className={styles.myGames}>
+          <a href="./myGames">Mine runder</a>
+        </div>
       </div>
       {games.map((game) => (
         <div key={game.id} className={styles.gameContainer}>
-          <h2>
-            Game {game.id} At {game.location}
-          </h2>
+          <h2>Today At {game.location}</h2>
           {currentGame !== game.id && (
             <button
               className={styles.selectGameBtn}
@@ -255,10 +252,10 @@ const OnePlayer = () => {
                     currentGame,
                     currentHole,
                     parseInt(e.target.value)
-                    )
-                  }
-                  className={styles.scoreInput}
-                  />
+                  )
+                }
+                className={styles.scoreInput}
+              />
             </div>
           )}
           {currentGame && (

@@ -1,158 +1,144 @@
-/* frisbee.module.css */
+/* onePlayer.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333333;
-  padding: 5px;
   margin-bottom: 20px;
 }
 
 .logout {
-  font-size: 14px;
-  padding: 3px 6px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  background-color: #FF5722;
-  color: #FFFFFF;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logout:hover {
-  background-color: #E64A19;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #FFFFFF;
+  font-size: 24px;
+  margin: 0;
 }
 
-.myGames {
-  font-size: 14px;
-  color: #FFFFFF;
-  cursor: pointer;
-  transition: color 0.3s ease;
+.myGames a {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
 }
 
-.myGames:hover {
-  color: #CCCCCC;
+.myGames a:hover {
+  text-decoration: underline;
 }
-
 
 .gameContainer {
-  background-color: #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.gameContainer h2 {
-  font-size: 24px;
+.selectGameBtn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
   margin-bottom: 10px;
-  color: #333333;
 }
 
-.totalPar, .totalScore {
+.totalPar,
+.totalScore {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #777777;
 }
 
 .holeInfo {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-.currentHole, .currentScore {
-  font-size: 18px;
-  color: #333333;
-}
-
-.prevHoleBtn, .nextHoleBtn, .selectGameBtn {
-  font-size: 16px;
+.prevHoleBtn,
+.nextHoleBtn {
   padding: 10px 20px;
+  background-color: #2196f3;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  background-color: #FF5722;
-  color: #FFFFFF;
+  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.prevHoleBtn:hover, .nextHoleBtn:hover, .selectGameBtn:hover {
-  background-color: #E64A19;
-}
-
-.prevHoleBtn:disabled, .nextHoleBtn:disabled {
-  background-color: #CCCCCC;
+.prevHoleBtn:disabled,
+.nextHoleBtn:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
-}
-
-.updateScoreContainer {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #F9F9F9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .updateScoreTitle {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #333333;
 }
 
 .scoreInput {
-  width: 100px;
-  padding: 5px 10px;
-  border: 1px solid #CCCCCC;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.saveGameBtn {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.saveGameBtn:hover {
+  background-color: #f57c00;
+}
+
+.gameSavedMessage {
+  font-size: 16px;
+  color: #4caf50;
+  margin-top: 10px;
+}
+
+.locationSelectLabel {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.locationSelect {
+  padding: 10px;
   font-size: 16px;
 }
 
 .addGameBtn {
-  font-size: 18px;
   padding: 10px 20px;
+  background-color: #9c27b0;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  background-color: #4CAF50;
-  color: #FFFFFF;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .addGameBtn:hover {
-  background-color: #388E3C;
-}
-
-
-/* frisbee.module.css */
-
-.saveGameBtn {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.saveGameBtn:hover {
-  background-color: #45a049;
-}
-
-.saveGameBtn:disabled {
-  background-color: gray;
-  cursor: not-allowed;
-}
-
-a{
-  color: white;
+  background-color: #7b1fa2;
 }
