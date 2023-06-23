@@ -22,7 +22,7 @@ const getInitialScores = (holeCount, parData) => {
   return scores;
 };
 
-const OnePlayer = () => {
+const NewGames = () => {
   const [games, setGames] = useState([]); // State to store the list of games
   const [currentGame, setCurrentGame] = useState(null); // State to track the current game
   const [currentHole, setCurrentHole] = useState(0); // State to track the current hole
@@ -291,4 +291,4 @@ const OnePlayer = () => {
   );
 };
 
-export default OnePlayer;
+export default NewGames;
