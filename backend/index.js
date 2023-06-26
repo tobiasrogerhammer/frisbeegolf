@@ -7,7 +7,8 @@ const games = require("./games");
 const env = require("dotenv").config();
 
 const app = express();
-const db = env.DB_CONNECTION_STRING;
+const db =
+  "mongodb+srv://tobias:jippijippi@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority";
 const port = env.PORT || 5000;
 
 mongoose.set("strictQuery", false);
