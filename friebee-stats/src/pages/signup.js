@@ -17,7 +17,7 @@ function Signup({ onSignup }) {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/user/create",
+        "https://freesbeegolf.onrender.com/user/create",
         {
           username: username,
           mailadress: email,
@@ -39,13 +39,16 @@ function Signup({ onSignup }) {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    const response = await fetch(
+      "https://freesbeegolf.onrender.com/user/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      }
+    );
     const data = await response.json();
     if (response.ok) {
       sessionStorage.setItem("username", username);
@@ -69,7 +72,7 @@ function Signup({ onSignup }) {
       {isRegistering ? (
         <div>
           <div className={styles.navbar}>
-             <h1>Frisbeegolf stats</h1>
+            <h1>Frisbeegolf stats</h1>
           </div>
           <form onSubmit={handleSubmit}>
             <h2>Sign up</h2>
@@ -105,7 +108,7 @@ function Signup({ onSignup }) {
       ) : (
         <div>
           <div className={styles.navbar}>
-              <h1>Frisbeegolf statistikk</h1>
+            <h1>Frisbeegolf statistikk</h1>
           </div>
           <form onSubmit={handleLogin}>
             <h2>Login</h2>

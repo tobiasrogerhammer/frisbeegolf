@@ -13,7 +13,7 @@ const PreviousGames = () => {
       try {
         const username = sessionStorage.getItem("username");
         const response = await axios.get(
-          `http://localhost:5000/game/${username}`
+          `https://freesbeegolf.onrender.com/game/${username}`
         );
         setGames(response.data);
       } catch (error) {

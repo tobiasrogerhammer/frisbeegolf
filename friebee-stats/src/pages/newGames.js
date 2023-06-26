@@ -134,7 +134,7 @@ const NewGames = () => {
       };
 
       axios
-        .post("http://localhost:5000/game/create", gameData)
+        .post("https://freesbeegolf.onrender.com/game/create", gameData)
         .then((response) => {
           console.log("Game saved successfully:", response.data);
           // Optionally, you can perform additional actions upon successful save
