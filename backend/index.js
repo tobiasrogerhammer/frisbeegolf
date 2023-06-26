@@ -4,22 +4,20 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const users = require("./users");
 const games = require("./games");
+require("dotenv").config();
 
 const app = express();
-const db =
-  "mongodb+srv://tobias:jippijippi@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority";
-const port = 5000;
+const db = process.env.DB_CONNECTION_STRING;
+const port = process.env.PORT || 5000;
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(
-    "mongodb+srv://tobias:jippijippi@cluster0.6dqxuvj.mongodb.net/?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      dbName: "frisbee-db",
-    }
-  )
+  .connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: "frisbee-db",
+  })
+
   .then(console.log("Connected to mongoDB"))
   .catch((err) => console.log(err));
 
