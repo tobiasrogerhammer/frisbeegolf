@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const users = require("./users");
 const games = require("./games");
-require("dotenv").config();
+const env = require("dotenv").config();
 
 const app = express();
-const db = process.env.DB_CONNECTION_STRING;
-const port = process.env.PORT || 5000;
+const db = env.DB_CONNECTION_STRING;
+const port = env.PORT || 5000;
 
 mongoose.set("strictQuery", false);
 mongoose
