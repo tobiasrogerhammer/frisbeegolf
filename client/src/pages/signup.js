@@ -55,10 +55,10 @@ function Signup({ onSignup }) {
       sessionStorage.setItem("isAdmin", data.isAdmin);
       if (data.isAdmin) {
         // Redirect to admin page
-        window.location.href = "/adminpage";
+        window.location.href = "https://myfreesbee.onrender.com/adminpage";
       } else {
         // Redirect to user home page
-        window.location.href = "/onePlayer";
+        window.location.href = "https://myfreesbee.onrender.com/onePlayer";
       }
       console.log("Login successful");
     } else {
