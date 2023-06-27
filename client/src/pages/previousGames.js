@@ -264,7 +264,7 @@ const PreviousGames = () => {
     <div className={styles.container}>
       <h1>Previous Games</h1>
       <button className={styles.logoutButton}>
-        <a href="./onePlayer">Ny runde</a>
+        <a href="./newGames">Ny runde</a>
       </button>
       <div className={styles.locationSelector}>
         <label htmlFor="location">Select Location:</label>

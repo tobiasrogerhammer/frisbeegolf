@@ -160,7 +160,7 @@ const NewGames = () => {
         </button>
         <h1 className={styles.title}> Frisbee Golf</h1>
         <div className={styles.myGames}>
-          <a href="./myGames">Mine runder</a>
+          <a href="./previousGames">Mine runder</a>
         </div>
       </div>
       {games.map((game) => (
