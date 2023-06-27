@@ -10,7 +10,7 @@ import {
   LineElement,
   Chart,
 } from "chart.js";
-import styles from "../css/frisbee.module.css";
+import styles from "../css/newGames.module.css";
 
 Chart.register(LinearScale, CategoryScale, PointElement, LineElement);
 
@@ -266,7 +266,7 @@ const NewGames = () => {
           {isGameSaved && <div>Game saved successfully!</div>}
         </div>
       ))}
-      <div>
+      <div className="selectGames">
         <label htmlFor="locationSelect" className={styles.label}>
           New game at{" "}
         </label>

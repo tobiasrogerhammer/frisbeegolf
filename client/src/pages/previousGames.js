@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
-import styles from "../css/myGames.module.css";
+import styles from "../css/previousGames.module.css";
 
 const PreviousGames = () => {
   const [games, setGames] = useState([]);
@@ -262,10 +262,12 @@ const PreviousGames = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Previous Games</h1>
-      <button className={styles.logoutButton}>
-        <a href="./newGames">Ny runde</a>
-      </button>
+      <div className="styles.navbar">
+        <h1>Previous Games</h1>
+        <button className={styles.logoutButton}>
+          <a href="./newGames">Ny runde</a>
+        </button>
+      </div>
       <div className={styles.locationSelector}>
         <label htmlFor="location">Select Location:</label>
         <select
