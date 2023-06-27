@@ -30,7 +30,7 @@ function Signup({ onSignup }) {
       }
       if (response.status === 200) {
         sessionStorage.setItem("username", username);
-        window.location.href = "/onePlayer";
+        window.location.href = "/newGames";
       }
     } catch (error) {
       console.log(error);
@@ -58,7 +58,7 @@ function Signup({ onSignup }) {
         window.location.href = "/adminpage";
       } else {
         // Redirect to user home page
-        window.location.href = "/onePlayer";
+        window.location.href = "/newGames";
       }
       console.log("Login successful");
     } else {
