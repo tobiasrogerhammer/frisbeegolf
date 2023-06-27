@@ -5,7 +5,7 @@ const courtSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  descrption: {
+  description: {
     type: String,
     required: true,
   },
