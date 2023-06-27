@@ -10,7 +10,7 @@ const courtSchema = new mongoose.Schema({
     required: true,
   },
   warnings: {
-    type: String,
+    type: [String],
     required: true,
   },
   address: {
