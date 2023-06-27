@@ -25,6 +25,14 @@ const courtSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  contact: {
+    type: String,
+    required: true,
+  },
+  website: {
+    type: String,
+    required: true,
+  },
   holes: {
     type: Number,
     required: true,
