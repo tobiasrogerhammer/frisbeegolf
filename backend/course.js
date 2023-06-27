@@ -15,6 +15,7 @@ router.post("/create", async (req, res) => {
       holes,
       parData,
       holeLengths,
+      id,
     } = req.body;
 
     const newCourse = new Course({
