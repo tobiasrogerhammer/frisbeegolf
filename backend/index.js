@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const users = require("./users");
 const games = require("./games");
+const courses = require("./course");
 const env = require("dotenv").config();
 
 const app = express();
@@ -34,6 +35,7 @@ app.use(
 
 app.use("/user", users);
 app.use("/game", games);
+app.use("/courses", courses);
 
 app.listen(port, () => {
   console.log(`Backend server listening on port ${port}`);
