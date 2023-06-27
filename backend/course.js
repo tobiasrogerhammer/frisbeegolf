@@ -42,14 +42,10 @@ router.post("/create", async (req, res) => {
   }
 });
 
-router.get("/:username", async (req, res) => {
+router.get("/courses", async (req, res) => {
   try {
-    const username = req.params.username;
-
-    // Find all games that belong to the specified username
-    const games = await Game.find({ username }).sort({ location: 1, id: -1 });
-
-    res.status(200).json(games);
+    const courses = await Course.find();
+    res.status(200).json(courses);
   } catch (err) {
     console.log(err);
     res.status(500).json("Internal server error");
