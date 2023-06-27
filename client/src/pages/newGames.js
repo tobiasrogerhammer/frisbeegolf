@@ -149,7 +149,7 @@ const NewGames = () => {
   function logout() {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("isAdmin");
-    window.location.href = "https://myfreesbee.onrender.com/signup";
+    window.location.href = "./signup";
   }
 
   return (
@@ -160,7 +160,7 @@ const NewGames = () => {
         </button>
         <h1 className={styles.title}> Frisbee Golf</h1>
         <div className={styles.myGames}>
-          <a href="https://myfreesbee.onrender.com/myGames">Mine runder</a>
+          <a href="./myGames">Mine runder</a>
         </div>
       </div>
       {games.map((game) => (
