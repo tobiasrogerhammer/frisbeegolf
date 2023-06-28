@@ -1,81 +1,88 @@
+/* previousGames.module.css */
+
 .container {
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.navbar {
+  background-color: #7bb31a;
+  color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  padding: 0.5rem 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.averageScoresContainer {
-  margin-top: 20px;
-}
-
-.gameContainer {
-  margin-bottom: 40px;
-}
-
-.locationSelector {
-  margin-top: 20px;
-}
-
-.logoutButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #f44336;
+.newGameButton {
+  background-color: #7bb31a;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 0.25rem;
   cursor: pointer;
-}
-
-.logoutButton a {
-  color: white;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.logoutButton:hover {
-  background-color: #d32f2f;
+.locationSelector {
+  margin-top: 1rem;
+}
+
+.locationSelector label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.locationSelector select {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.averageScoresContainer {
+  margin-top: 2rem;
+}
+
+.averageScoresContainer h3 {
+  margin-bottom: 1rem;
 }
 
 .gamesContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
+  margin-top: 2rem;
 }
 
-h1 {
-  font-size: 24px;
+.gameContainer {
+  margin-bottom: 2rem;
 }
 
-h3 {
-  margin-bottom: 10px;
+.gameContainer h3 {
+  margin: 0;
 }
 
-p {
-  margin: 5px 0;
+.gameContainer p {
+  margin: 0.5rem 0;
 }
 
-table {
-  margin-top: 20px;
-  width: 100%;
-  border-collapse: collapse;
+.gameContainer .chart-container {
+  height: 400px;
 }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-tfoot td {
+.logoutButton {
+  background-color: #7bb31a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.chart-container {
-  position: relative;
-  height: 300px;
+a{
+  color: white;
 }

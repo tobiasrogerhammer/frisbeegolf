@@ -262,9 +262,12 @@ const PreviousGames = () => {
 
   return (
     <div className={styles.container}>
-      <div className="styles.navbar">
+      <div className={styles.navbar}>
+        <button className={styles.logoutButton} onClick={logout}>
+          Logout
+        </button>
         <h1>Previous Games</h1>
-        <button className={styles.logoutButton}>
+        <button className={styles.newGameButton}>
           <a href="./newGames">Ny runde</a>
         </button>
       </div>
@@ -286,9 +289,6 @@ const PreviousGames = () => {
         {renderAverageScoresGraph(averageScores)}
       </div>
       <div className={styles.gamesContainer}>{renderGraphs(filteredGames)}</div>
-      <button className={styles.logoutButton} onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 };
