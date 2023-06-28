@@ -59,8 +59,6 @@ input[type="password"] {
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   font-size: 16px; /* Adjust font size for mobile devices */
-  -moz-appearance: none; /* Remove default styling on Firefox */
-  -webkit-appearance: none; /* Remove default styling on WebKit/Blink */
 }
 
 input[type="text"]:focus,
