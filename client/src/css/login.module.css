@@ -5,6 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  touch-action: manipulation; /* Disable zooming on touch devices */
 }
 
 .login {
@@ -13,6 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden; /* Prevent content from overflowing */
 }
 
 .navbar {
@@ -32,9 +34,12 @@ form {
   padding: 1rem;
   width: 90%;
   max-width: 400px;
+  overflow: hidden; /* Prevent content from overflowing */
+  align-items: center;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -48,11 +53,20 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 80%;
   padding: 0.5rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
+  font-size: 16px; /* Adjust font size for mobile devices */
+  -moz-appearance: none; /* Remove default styling on Firefox */
+  -webkit-appearance: none; /* Remove default styling on WebKit/Blink */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none; /* Remove focus outline */
 }
 
 button {
